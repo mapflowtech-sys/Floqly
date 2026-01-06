@@ -6,7 +6,15 @@
       "Bash(git init:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(tree:*)",
+      "Bash(ls:*)",
+      "Bash(if [ -f .env.local ])",
+      "Bash(then echo \"✅ Файл .env.local существует\")",
+      "Bash(cat:*)",
+      "Bash(timeout 8 npm run dev:*)",
+      "Bash(git push)",
+      "Bash(git checkout:*)"
     ]
   }
 }
