@@ -8,12 +8,6 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 
-  // Русский язык по умолчанию
-  i18n: {
-    locales: ['ru'],
-    defaultLocale: 'ru',
-  },
-
   // Оптимизация изображений
   images: {
     formats: ['image/avif', 'image/webp'],
