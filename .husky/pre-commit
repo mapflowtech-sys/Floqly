@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Запускаем проверку типов и линтинг перед коммитом
 echo "🔍 Проверка TypeScript типов..."
 npm run type-check || exit 1
