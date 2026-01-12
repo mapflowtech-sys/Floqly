@@ -20,7 +20,7 @@ import type {
   WidgetPosition,
   ContactInfo,
   ContactsExpandDirection,
-  AnimationEntrance,
+  EntranceAnimation,
   AnimationSpeed,
 } from '@/types/widget';
 
@@ -57,7 +57,7 @@ export default function WidgetBuilderPage() {
 
   // Анимации
   const [animationEnabled, setAnimationEnabled] = useState(true);
-  const [animationEntrance, setAnimationEntrance] = useState<AnimationEntrance>('scale');
+  const [animationEntrance, setEntranceAnimation] = useState<EntranceAnimation>('scale');
   const [animationSpeed, setAnimationSpeed] = useState<AnimationSpeed>('medium');
   const [enablePulse, setEnablePulse] = useState(false);
 
@@ -65,9 +65,9 @@ export default function WidgetBuilderPage() {
   const [contactsExpandDirection, setContactsExpandDirection] =
     useState<ContactsExpandDirection>('radial');
   const [contacts, setContacts] = useState<ContactInfo[]>([
-    { type: 'telegram', value: 't.me/your_bot' },
-    { type: 'whatsapp', value: '+79001234567' },
-    { type: 'email', value: 'support@example.com' },
+    { type: 'telegram', value: 't.me/your_bot', enabled: true },
+    { type: 'whatsapp', value: '+79001234567', enabled: true },
+    { type: 'email', value: 'support@example.com', enabled: true },
   ]);
 
   // UI State
@@ -157,7 +157,7 @@ export default function WidgetBuilderPage() {
                   animationEnabled={animationEnabled}
                   setAnimationEnabled={setAnimationEnabled}
                   animationEntrance={animationEntrance}
-                  setAnimationEntrance={setAnimationEntrance}
+                  setEntranceAnimation={setEntranceAnimation}
                   animationSpeed={animationSpeed}
                   setAnimationSpeed={setAnimationSpeed}
                   enablePulse={enablePulse}

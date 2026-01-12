@@ -57,7 +57,7 @@ export function getDevicePerformance(): 'high' | 'medium' | 'low' {
   const cores = navigator.hardwareConcurrency || 2;
 
   // Объём памяти (если доступно)
-  const memory = (navigator as any).deviceMemory;
+  const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
 
   // Низкая производительность: <4 ядер или <4GB RAM
   if (cores < 4 || (memory && memory < 4)) {
@@ -88,10 +88,11 @@ export function prefersReducedMotion(): boolean {
 export function isTouchDevice(): boolean {
   if (typeof window === 'undefined') return false;
 
+  const msMaxTouchPoints = (navigator as Navigator & { msMaxTouchPoints?: number }).msMaxTouchPoints;
   return (
     'ontouchstart' in window ||
     navigator.maxTouchPoints > 0 ||
-    (navigator as any).msMaxTouchPoints > 0
+    (msMaxTouchPoints !== undefined && msMaxTouchPoints > 0)
   );
 }
 

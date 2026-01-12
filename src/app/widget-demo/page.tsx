@@ -227,11 +227,11 @@ function ContactsMenuDemo({ themeMode }: ContactsMenuDemoProps) {
 
   // Тестовые контакты
   const contacts: ContactInfo[] = [
-    { type: 'telegram', value: 't.me/example' },
-    { type: 'whatsapp', value: '+1234567890' },
-    { type: 'vk', value: 'vk.com/example' },
-    { type: 'email', value: 'hello@example.com' },
-    { type: 'phone', value: '+1234567890' },
+    { type: 'telegram', value: 't.me/example', enabled: true },
+    { type: 'whatsapp', value: '+1234567890', enabled: true },
+    { type: 'vk', value: 'vk.com/example', enabled: true },
+    { type: 'email', value: 'hello@example.com', enabled: true },
+    { type: 'phone', value: '+1234567890', enabled: true },
   ];
 
   return (

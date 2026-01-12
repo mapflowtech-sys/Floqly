@@ -19,7 +19,7 @@ import type {
   WidgetPosition,
   ContactInfo,
   ContactsExpandDirection,
-  AnimationEntrance,
+  EntranceAnimation,
   AnimationSpeed,
 } from '@/types/widget';
 
@@ -35,7 +35,7 @@ interface WidgetConfig {
     background?: string;
   };
   animationEnabled: boolean;
-  animationEntrance: AnimationEntrance;
+  animationEntrance: EntranceAnimation;
   animationSpeed: AnimationSpeed;
   enablePulse: boolean;
   contactsExpandDirection: ContactsExpandDirection;

@@ -20,7 +20,7 @@ import type {
   WidgetPosition,
   ContactInfo,
   ContactsExpandDirection,
-  AnimationEntrance,
+  EntranceAnimation,
   AnimationSpeed,
 } from '@/types/widget';
 
@@ -36,7 +36,7 @@ interface WidgetPreviewProps {
     background?: string;
   };
   animationEnabled: boolean;
-  animationEntrance: AnimationEntrance;
+  animationEntrance: EntranceAnimation;
   animationSpeed: AnimationSpeed;
   enablePulse: boolean;
   contactsExpandDirection: ContactsExpandDirection;
@@ -118,7 +118,7 @@ export default function WidgetPreview({
                 shape={shape}
                 size={size}
                 customColors={Object.keys(customColors).length > 0 ? customColors : undefined}
-                animationEntrance={animationEnabled ? animationEntrance : 'none'}
+                entranceAnimation={animationEnabled ? animationEntrance : 'none'}
                 animationSpeed={animationSpeed}
                 enablePulse={enablePulse && animationEnabled}
                 onClick={() => setIsOpen(!isOpen)}
@@ -129,6 +129,7 @@ export default function WidgetPreview({
                 contacts={contacts}
                 isOpen={isOpen}
                 direction={contactsExpandDirection}
+                theme={theme}
                 themeMode={themeMode}
                 animationSpeed={animationSpeed}
                 onContactClick={(contact) => {
@@ -166,7 +167,7 @@ export default function WidgetPreview({
       {/* Дополнительная информация */}
       <div className="mt-4 p-3 bg-muted/30 rounded-lg border border-border">
         <p className="font-mono text-[10px] text-foreground/70 leading-relaxed">
-          <span className="text-foreground font-semibold">Совет:</span> Нажмите "Полный экран" для
+          <span className="text-foreground font-semibold">Совет:</span> Нажмите &ldquo;Полный экран&rdquo; для
           просмотра на разных устройствах
         </p>
       </div>
@@ -210,7 +211,7 @@ interface FullscreenPreviewProps {
     background?: string;
   };
   animationEnabled: boolean;
-  animationEntrance: AnimationEntrance;
+  animationEntrance: EntranceAnimation;
   animationSpeed: AnimationSpeed;
   enablePulse: boolean;
   contactsExpandDirection: ContactsExpandDirection;
@@ -366,7 +367,7 @@ function FullscreenPreview({
                 shape={shape}
                 size={size}
                 customColors={Object.keys(customColors).length > 0 ? customColors : undefined}
-                animationEntrance={animationEnabled ? animationEntrance : 'none'}
+                entranceAnimation={animationEnabled ? animationEntrance : 'none'}
                 animationSpeed={animationSpeed}
                 enablePulse={enablePulse && animationEnabled}
                 onClick={() => setIsOpen(!isOpen)}
@@ -376,6 +377,7 @@ function FullscreenPreview({
                 contacts={contacts}
                 isOpen={isOpen}
                 direction={contactsExpandDirection}
+                theme={theme}
                 themeMode={themeMode}
                 animationSpeed={animationSpeed}
                 onContactClick={(contact) => {

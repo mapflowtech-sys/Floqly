@@ -22,7 +22,9 @@
       "Bash(findstr:*)",
       "Bash(taskkill:*)",
       "Bash(timeout 3 bash -c \"sleep 5\")",
-      "Bash(ping:*)"
+      "Bash(ping:*)",
+      "Bash(npm run lint:*)",
+      "Bash(find:*)"
     ]
   }
 }

@@ -5,8 +5,6 @@
  */
 
 import type {
-  WidgetTheme,
-  ThemeVariant,
   WidgetColors,
   ThemeName,
   ThemeMode,

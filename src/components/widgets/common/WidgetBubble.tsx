@@ -34,7 +34,6 @@ import {
   getEntranceVariants,
   subtlePulseVariants,
   hoverVariants,
-  tapVariants,
 } from '@/lib/animations/widgetVariants';
 import { isMobile, isTouchDevice } from '@/lib/utils/deviceDetection';
 import { ThreeDotsIcon } from './ThreeDotsIcon';

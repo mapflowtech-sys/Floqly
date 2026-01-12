@@ -178,6 +178,23 @@ export interface ThemeVariant {
   customCSS?: Record<string, string>;
 }
 
+/**
+ * Позиция виджета на странице
+ */
+export interface WidgetPosition {
+  /** Горизонтальное позиционирование */
+  horizontal: 'left' | 'right';
+
+  /** Вертикальное позиционирование */
+  vertical: 'top' | 'bottom';
+
+  /** Отступ по горизонтали (в px) */
+  offsetX: number;
+
+  /** Отступ по вертикали (в px) */
+  offsetY: number;
+}
+
 // ============================================================================
 // КОНФИГУРАЦИЯ ВИДЖЕТА
 // ============================================================================
@@ -349,11 +366,11 @@ export const MOBILE_BREAKPOINT = 768; // px
  * Варианты анимаций для Framer Motion
  */
 export interface AnimationVariants {
-  initial: any;
-  animate: any;
-  exit: any;
-  hover?: any;
-  tap?: any;
+  initial: Record<string, string | number>;
+  animate: Record<string, string | number>;
+  exit: Record<string, string | number>;
+  hover?: Record<string, string | number>;
+  tap?: Record<string, string | number>;
 }
 
 // ============================================================================
@@ -406,7 +423,7 @@ export interface WidgetEventData {
   event: WidgetEvent;
   widgetId: string;
   timestamp: Date;
-  data?: any;
+  data?: Record<string, unknown>;
 }
 
 // ============================================================================

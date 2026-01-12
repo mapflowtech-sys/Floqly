@@ -19,7 +19,7 @@ import type {
   WidgetPosition,
   ContactInfo,
   ContactsExpandDirection,
-  AnimationEntrance,
+  EntranceAnimation,
   AnimationSpeed,
   ContactType,
 } from '@/types/widget';
@@ -50,8 +50,8 @@ interface SettingsPanelProps {
   // Анимации
   animationEnabled: boolean;
   setAnimationEnabled: (enabled: boolean) => void;
-  animationEntrance: AnimationEntrance;
-  setAnimationEntrance: (entrance: AnimationEntrance) => void;
+  animationEntrance: EntranceAnimation;
+  setEntranceAnimation: (entrance: EntranceAnimation) => void;
   animationSpeed: AnimationSpeed;
   setAnimationSpeed: (speed: AnimationSpeed) => void;
   enablePulse: boolean;
@@ -75,12 +75,12 @@ export default function SettingsPanel({
   setSize,
   position,
   setPosition,
-  customColors,
-  setCustomColors,
+  customColors: _customColors,
+  setCustomColors: _setCustomColors,
   animationEnabled,
   setAnimationEnabled,
   animationEntrance,
-  setAnimationEntrance,
+  setEntranceAnimation,
   animationSpeed,
   setAnimationSpeed,
   enablePulse,
@@ -92,7 +92,7 @@ export default function SettingsPanel({
 }: SettingsPanelProps) {
   // Добавить контакт
   const addContact = () => {
-    setContacts([...contacts, { type: 'telegram', value: '' }]);
+    setContacts([...contacts, { type: 'telegram', value: '', enabled: true }]);
   };
 
   // Удалить контакт
@@ -343,10 +343,10 @@ export default function SettingsPanel({
                   Тип появления
                 </label>
                 <div className="grid grid-cols-2 gap-2">
-                  {(['fade', 'slide', 'scale', 'bounce'] as AnimationEntrance[]).map((anim) => (
+                  {(['fade', 'slide', 'scale', 'bounce'] as EntranceAnimation[]).map((anim) => (
                     <button
                       key={anim}
-                      onClick={() => setAnimationEntrance(anim)}
+                      onClick={() => setEntranceAnimation(anim)}
                       className={`p-3 rounded border text-center transition-colors ${
                         animationEntrance === anim
                           ? 'border-foreground bg-foreground/5'

@@ -23,7 +23,6 @@ import type {
 import {
   verticalExpandVariants,
   horizontalExpandVariants,
-  radialExpandVariants,
   getRadialPosition,
 } from '@/lib/animations/widgetVariants';
 import { WIDGET_DIMENSIONS, WIDGET_DIMENSIONS_MOBILE } from '@/types/widget';
@@ -209,7 +208,7 @@ export function ContactsMenu({
   isOpen,
   animationSpeed = 'medium',
   size = 'medium',
-  theme,
+  theme: _theme,
   themeMode = 'light',
   onContactClick,
 }: ContactsMenuProps) {
