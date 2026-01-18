@@ -1,12 +1,29 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Cormorant_Garamond, IBM_Plex_Mono, Caveat } from 'next/font/google';
 import './globals.css';
 
-// Вывод: шрифт Inter с поддержкой кириллицы для русского текста
-const inter = Inter({
+// Вывод: Cormorant Garamond для заголовков - утончённый serif близкий к референсу
+const cormorant = Cormorant_Garamond({
   subsets: ['latin', 'cyrillic'],
-  variable: '--font-inter',
+  variable: '--font-heading',
   display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+});
+
+// Вывод: IBM Plex Mono для UI-элементов и логотипа
+const mono = IBM_Plex_Mono({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-mono',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+});
+
+// Вывод: Caveat для рукописной надписи
+const handwriting = Caveat({
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-handwriting',
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -21,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className={inter.variable}>
-      <body className={inter.className}>{children}</body>
+    <html lang="ru" className={`${cormorant.variable} ${mono.variable} ${handwriting.variable}`}>
+      <body className={mono.className}>{children}</body>
     </html>
   );
 }

@@ -1,15 +1,13 @@
+import { Header } from '@/components/layout/Header';
+import { Hero } from '@/components/layout/Hero';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Floqly</h1>
-        <p className="text-xl text-muted-foreground">
-          Проект инициализирован успешно 🚀
-        </p>
-        <p className="mt-4 text-sm text-muted-foreground">
-          Следующий шаг: npm install
-        </p>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+      </main>
+    </>
   );
 }
